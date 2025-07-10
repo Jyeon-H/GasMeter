@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-from data import load_data
+from data_utils import load_data
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
