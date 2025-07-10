@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-from data import load_data
+from data_utils import load_data
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
