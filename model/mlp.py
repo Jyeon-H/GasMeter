@@ -7,7 +7,7 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import to_categorical
 import matplotlib.pyplot as plt
 
-def train_mlp(x, y, epochs=30, batch_size=128):
+def train_mlp(epochs=30, batch_size=128):
     x, y = load_data()
     x = x.reshape(-1, 28*28).astype(np.float32) / 255.0
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
