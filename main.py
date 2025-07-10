@@ -1,4 +1,4 @@
-from Object Detection.yolo import train_yolov5
+from ObjectDetection.yolo import train_yolov5
 from Classification.cnn import train_cnn
 from Classification.mlp import train_mlp
 from plot_mis import plot_misclassified
