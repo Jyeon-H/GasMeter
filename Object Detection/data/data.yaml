@@ -1,0 +1,11 @@
+# Train/val sets  file: path/to/imgs.txt
+# total images 415 images
+train: train # train images  332 images
+val: val # val images  83 images
+
+
+# Classes
+nc : 2
+names: 
+  0: number
+  1: gas meter
