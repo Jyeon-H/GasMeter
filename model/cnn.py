@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+from data import load_data
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Dense, Flatten
@@ -8,6 +9,7 @@ from tensorflow.keras.utils import to_categorical
 import matplotlib.pyplot as plt
 
 def train_cnn(x, y, epochs=30, batch_size=128):
+    x, y = load_data()
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42) 
 
     x_train = x_train.reshape(-1, 28, 28, 1).astype(np.float32) / 255.0
