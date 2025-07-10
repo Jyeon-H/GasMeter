@@ -15,6 +15,7 @@ YOLOv5 기반 객체 탐지 모델과 신경망 기반 숫자 인식 모델을 �
 - 전체 파이프라인 설계 및 단독 구현 (데이터 수집 -> 전처리 -> 모델 학습 -> 결과 평가)
 - YOLOv5 기반 객체 탐지 모델 학습 및 최적화
 - 숫자 인식 모델(Multi-layer Perceptron, CNN) 개발 및 성능 비교
+<br><br>
 
 ## 🗂️ 데이터
 - **구성** : 직접 촬영 및 수집 <br>
@@ -27,26 +28,41 @@ YOLOv5 기반 객체 탐지 모델과 신경망 기반 숫자 인식 모델을 �
 - **주요 기술** : Python, OpenCV, PyTorch, YOLOv5, TensorFlow/Keras
 - **YOLOv5 (객체 탐지)** :
   - 사전 학습된 'yolov5s' 모델 사용
-  - Image_size : 416
+  - 입력 차원 : 416 *416 가스계량기 이미지
   - Epochs : 50
   - Batchsize : 16
   - 'train.txt', 'val.txt', 'data.yaml' 커스터마이징 후 학습 진행
-  - [YOLOv5 커스텀 학습 튜토리얼 영상 참고](https://youtu.be/T0DO1C8uYP8?si=dSr4nJK_Cg9B-Bf9)
-- **MLP**:
-
- - **CNN**:
-
+  - [YOLOv5 커스텀 학습 튜토리얼 영상 참고](https://youtu.be/T0DO1C8uYP8?si=dSr4nJK_Cg9B-Bf9) <br><br>
+- **MLP (숫자 인식)**:
+  - <img width="600" height="300" alt="Image" src="https://github.com/user-attachments/assets/fd8b7913-c11c-45da-8e18-11b2a063cf1e"/>
+  - 입력 차원 : 784 (28 *28 숫자 이미지) 
+   - 은닉층 : 1024 units, 'tanh' activation
+   - 출력층 : 10 classes(0~9), 'tanh' activation
+   - 손실함수 : Mean Squared Error
+   - Optimizer : Adam (learning_rate=0.001)
+   - Epochs : 30
+   - Batchsize : 128
+  <br>
+- **CNN (숫자 인식)**:
+   <img width="1280" height="207" alt="Image" src="https://github.com/user-attachments/assets/160f65cb-af25-44d1-98a4-838a7264e1a0" />
+   - 입력 차원 : 28 *28 *1
+   - 출력층 : 10 classes, Softmax
+   - 손실함수 : Categorical Crossentropy
+   - Optimizer : Adam (learning_rate=0.001)
+   - Epochs : 30
+   - Batchsize : 128
   <br><br>
 
 ## 📊 주요 결과
 - YOLOv5 : mAP@0.5 = 0.995, mAP@0.5:0.95 = 0.754
 - MLP : 정확도 76.5%
 - CNN : 정확도 99.8%
-- 객체 탐지 결과 (YOLOv5) <br>
-&nbsp;&nbsp;&nbsp;&nbsp; -> 바운딩 박스 설정이 객체 탐지 성능에 큰 영향을 미침
-- 숫자 예측 실패 이미지 예시
+- 객체 탐지 결과 (**YOLOv5**) <br>
+  -> 바운딩 박스 설정이 객체 탐지 성능에 큰 영향을 미침
+  <img width="800" height="400" alt="Image" src="https://github.com/user-attachments/assets/98c6cb40-317e-4aab-8721-fe2bc0a66dba" />
+- 숫자 예측 실패 이미지 예시 (**CNN**)
+  <img width="1374" height="217" alt="Image" src="https://github.com/user-attachments/assets/a87e68a0-ccf4-43d6-8e48-46b9483fbf66" />
 - 실시간 계량기 수치 확인 시스템, IoT 기반 자동 검침 시스템(가스/전기/수도) 등으로 확장 가능성을 제시함
-
 <br><br>
 
 ## 🔁 회고
