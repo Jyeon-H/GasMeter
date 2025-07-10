@@ -21,36 +21,36 @@ YOLOv5 기반 객체 탐지 모델과 신경망 기반 숫자 인식 모델을 �
 - **구성** : 직접 촬영 및 수집 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 객체 탐지용 가스계량기 이미지 약 400장 + 숫자 인식용 이미지 약 750장 생성 (0~9, 클래스당 75장)
 - **전처리** : OpenCV를 활용한 바운딩 박스 추출 및 숫자 영역 분할
-- 수집된 데이터는 비공개이며 외부 공유되지 않습니다.
+- 수집된 전체 데이터셋은 비공개이지만, 프로젝트 실행을 위한 예시 이미지 일부를 포함하였습니다.
 <br><br>
 
 ## 🔍 모델 구조
 - **주요 기술** : Python, OpenCV, PyTorch, YOLOv5, TensorFlow/Keras
 - **YOLOv5 (객체 탐지)** :
   - 사전 학습된 'yolov5s' 모델 사용
-  - 입력 차원 : 416 *416 가스계량기 이미지
-  - Epochs : 50
-  - Batchsize : 16
+  - *Input* : 416 *416 (가스계량기 이미지)
+  - *Epochs* : 50
+  - *Batchsize* : 16
   - 'train.txt', 'val.txt', 'data.yaml' 커스터마이징 후 학습 진행
   - [YOLOv5 커스텀 학습 튜토리얼 영상 참고](https://youtu.be/T0DO1C8uYP8?si=dSr4nJK_Cg9B-Bf9) <br><br>
 - **MLP (숫자 인식)**:
   - <img width="600" height="300" alt="Image" src="https://github.com/user-attachments/assets/fd8b7913-c11c-45da-8e18-11b2a063cf1e"/>
-  - 입력 차원 : 784 (28 *28 숫자 이미지) 
-   - 은닉층 : 1024 units, 'tanh' activation
-   - 출력층 : 10 classes(0~9), 'tanh' activation
-   - 손실함수 : Mean Squared Error
-   - Optimizer : Adam (learning_rate=0.001)
-   - Epochs : 30
-   - Batchsize : 128
+  - *Input* : 28 *28 (숫자 이미지) 
+  - *Hidden* : 1024 units, 'tanh' activation
+  - *Output* : 10 classes(0~9), 'tanh' activation
+  - *Loss Function* : Mean Squared Error
+  - *Optimizer* : Adam (learning_rate=0.001)
+  - *Epochs* : 30
+  - *Batchsize* : 128
   <br>
 - **CNN (숫자 인식)**:
    <img width="1280" height="207" alt="Image" src="https://github.com/user-attachments/assets/160f65cb-af25-44d1-98a4-838a7264e1a0" />
-   - 입력 차원 : 28 *28 *1
-   - 출력층 : 10 classes, Softmax
-   - 손실함수 : Categorical Crossentropy
-   - Optimizer : Adam (learning_rate=0.001)
-   - Epochs : 30
-   - Batchsize : 128
+   - *Input* : 28 *28 *1 (숫자 이미지)
+   - *Output* : 10 classes, Softmax
+   - *Loss Function* : Categorical Crossentropy
+   - *Optimizer* : Adam (learning_rate=0.001)
+   - *Epochs* : 30
+   - *Batchsize* : 128
   <br><br>
 
 ## 📊 주요 결과
