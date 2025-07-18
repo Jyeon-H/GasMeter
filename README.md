@@ -59,6 +59,7 @@ YOLOv5 기반 객체 탐지 모델과 신경망 기반 숫자 인식 모델을 �
   |-|Precision|Recall|mAP50|mAP50-90|
   |---|---|---|---|---|
   |YOLOv5|0.98|1.0|0.995|0.754|
+    - 가스계량기 탐지 이미지 예시
   <img width="800" height="400" alt="Image" src="https://github.com/user-attachments/assets/98c6cb40-317e-4aab-8721-fe2bc0a66dba" />
 
 - 숫자 인식 결과 (숫자 인식에 실패한 데이터/총 데이터)
