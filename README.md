@@ -67,9 +67,9 @@ YOLOv5 기반 객체 탐지 모델과 신경망 기반 숫자 인식 모델을 �
   |MNIST|646 / 750|494 / 750|
   |Custom|52 / 750|7 / 750|
     - 숫자 인식 실패한 이미지 예시 (**MLP**)
-  
+      <img width="1500" height="500" alt="Image" src="https://github.com/user-attachments/assets/ff2d0ab9-5f98-4342-b4ea-651899068fa7" />
     - 숫자 인식 실패한 이미지 예시 (**CNN**)
-  <img width="1374" height="217" alt="Image" src="https://github.com/user-attachments/assets/a87e68a0-ccf4-43d6-8e48-46b9483fbf66" />
+      <img width="1370" height="217" alt="Image" src="https://github.com/user-attachments/assets/a87e68a0-ccf4-43d6-8e48-46b9483fbf66" />
 - 실시간 계량기 수치 확인 시스템, IoT 기반 자동 검침 시스템(가스/전기/수도) 등으로 확장 가능성을 제시함.
 <br><br>
 
